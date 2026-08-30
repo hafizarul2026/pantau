@@ -33,26 +33,21 @@ npm start
 
 Repo: [github.com/hafizarul2026/pantau](https://github.com/hafizarul2026/pantau)
 
-## Deploy ke Cloudflare Workers
+## Deploy ke Vercel
 
-App ini menggunakan adapter OpenNext (`@opennextjs/cloudflare`).
+Pantau ialah aplikasi Next.js. Cara paling cepat:
 
-### Dari komputer sendiri
+1. Buka [Import ke Vercel](https://vercel.com/new/clone?repository-url=https://github.com/hafizarul2026/pantau)
+2. Pilih akaun GitHub `hafizarul2026` dan repo `pantau`
+3. Framework Preset: **Next.js** — biarkan Build Command `next build`
+4. Deploy
+
+Atau dari komputer sendiri:
 
 ```bash
 npm install
-npx wrangler login
-npm run deploy
+npx vercel login
+npx vercel --prod
 ```
 
-### Dari GitHub (automatik)
-
-1. Di [Cloudflare Dashboard → Workers & Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages), pilih **Import a repository** dan pilih repo `pantau`.
-2. Production branch: `main`.
-3. Atau simpan secret GitHub supaya workflow `.github/workflows/deploy-cloudflare.yml` berjalan:
-   - `CLOUDFLARE_API_TOKEN` — token dengan kebenaran *Workers Scripts:Edit*, *Account:Read*, dan *Zone:Edit* (supaya Custom Domain `pantau.hafizarul.my` boleh diikat)
-   - `CLOUDFLARE_ACCOUNT_ID` — ID akaun Cloudflare
-
-Selepas deploy dari akaun yang memiliki zon `hafizarul.my`, Pantau akan hidup di [https://pantau.hafizarul.my](https://pantau.hafizarul.my).
-
-`wrangler.jsonc` sudah ikat `pantau.hafizarul.my` sebagai Custom Domain. Cloudflare akan cipta rekod DNS dan sijil SSL sendiri — pastikan tiada CNAME lama pada subdomain itu sebelum deploy.
+Selepas deploy, Vercel akan berikan URL seperti `https://pantau.vercel.app`. Domain tersuai (contoh `pantau.hafizarul.my`) boleh ditambah di Project → Settings → Domains.
