@@ -48,14 +48,11 @@ npm run deploy
 ### Dari GitHub (automatik)
 
 1. Di [Cloudflare Dashboard → Workers & Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages), pilih **Import a repository** dan pilih repo `pantau`.
-2. Production branch: `main`. Wrangler akan baca `wrangler.jsonc`.
+2. Production branch: `main`.
 3. Atau simpan secret GitHub supaya workflow `.github/workflows/deploy-cloudflare.yml` berjalan:
-   - `CLOUDFLARE_API_TOKEN` — token dengan kebenaran *Workers Scripts:Edit* dan *Account:Read*
+   - `CLOUDFLARE_API_TOKEN` — token dengan kebenaran *Workers Scripts:Edit*, *Account:Read*, dan *Zone:Edit* (supaya Custom Domain `pantau.hafizarul.my` boleh diikat)
    - `CLOUDFLARE_ACCOUNT_ID` — ID akaun Cloudflare
 
-Selepas deploy dari akaun yang memiliki zon `hafizarul.my`, Pantau akan hidup di:
+Selepas deploy dari akaun yang memiliki zon `hafizarul.my`, Pantau akan hidup di [https://pantau.hafizarul.my](https://pantau.hafizarul.my).
 
-- [https://hafizarul.my](https://hafizarul.my)
-- [https://www.hafizarul.my](https://www.hafizarul.my)
-
-`wrangler.jsonc` sudah ikat kedua-dua hostname sebagai Custom Domain. Cloudflare akan cipta rekod DNS dan sijil SSL sendiri — pastikan tiada CNAME lama pada hostname itu sebelum deploy.
+`wrangler.jsonc` sudah ikat `pantau.hafizarul.my` sebagai Custom Domain. Cloudflare akan cipta rekod DNS dan sijil SSL sendiri — pastikan tiada CNAME lama pada subdomain itu sebelum deploy.
