@@ -53,4 +53,9 @@ npm run deploy
    - `CLOUDFLARE_API_TOKEN` — token dengan kebenaran *Workers Scripts:Edit* dan *Account:Read*
    - `CLOUDFLARE_ACCOUNT_ID` — ID akaun Cloudflare
 
-Selepas deploy, Pantau akan ada di `https://pantau.<akaun>.workers.dev`.
+Selepas deploy dari akaun yang memiliki zon `hafizarul.my`, Pantau akan hidup di:
+
+- [https://hafizarul.my](https://hafizarul.my)
+- [https://www.hafizarul.my](https://www.hafizarul.my)
+
+`wrangler.jsonc` sudah ikat kedua-dua hostname sebagai Custom Domain. Cloudflare akan cipta rekod DNS dan sijil SSL sendiri — pastikan tiada CNAME lama pada hostname itu sebelum deploy.
