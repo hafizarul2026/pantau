@@ -12,6 +12,10 @@
     "enabled": true
   },
   "routes": [
-    { "pattern": "pantau.hafizarul.my", "custom_domain": true }
+    {
+      "pattern": "pantau.hafizarul.my",
+      "zone_name": "hafizarul.my",
+      "custom_domain": true
+    }
   ]
 }
