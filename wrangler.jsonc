@@ -12,7 +12,6 @@
     "enabled": true
   },
   "routes": [
-    { "pattern": "hafizarul.my", "custom_domain": true },
-    { "pattern": "www.hafizarul.my", "custom_domain": true }
+    { "pattern": "pantau.hafizarul.my", "custom_domain": true }
   ]
 }
