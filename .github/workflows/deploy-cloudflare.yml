@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm install
       - run: npx opennextjs-cloudflare build
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
